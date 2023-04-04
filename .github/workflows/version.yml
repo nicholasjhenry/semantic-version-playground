@@ -7,7 +7,12 @@ jobs:
   version:
     runs-on: ubuntu-latest
     steps:
-      - uses: paulhatch/semantic-version@v5.0.2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Version
+        uses: paulhatch/semantic-version@v5.0.2
         id: semantic-version
         with:
           # The prefix to use to identify tags
